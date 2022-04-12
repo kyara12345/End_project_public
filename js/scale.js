@@ -5,6 +5,8 @@ let index = 0
 
 let score = []
 
+// let tekstdeel1 = "De CO2 uitstoot van de productie tot de cosumptie van <b>"
+
 function begin(){
         let svg = d3.select("body").append("svg")
                 .attr("height", 650)
@@ -27,17 +29,10 @@ function begin(){
 
         svg
             .append("text")
-            .text("U krijgt 10 keer 2 etenswaren te zien, klik vervolgens onderaan op de button,")
+            .text("U krijgt 10 keer 2 etenswaren te zien, klik vervolgens op het product dat volgens u de meeste CO2 uitstoot!")
             .attr("font-size", "20")
             .attr("x", "25")
             .attr("y", "310")
-
-        svg
-            .append("text")
-            .text("met het product dat volgens u de meeste CO2 uitstoot!")
-            .attr("font-size", "20")
-            .attr("x", "25")
-            .attr("y", "330")
 
         svg
             .append("text")
@@ -68,6 +63,29 @@ function drawscale(){
             .attr("font-size", "20")
             .attr("x", "180")
             .attr("y", "90")
+
+        svg
+            .append("text")
+            .text(function food1(d){
+                    if(index<10){
+                    d = producten[index]
+                    return d.eten1}
+                    })
+            .attr("font-size", "20")
+            .attr("x", "250")
+            .attr("y", "450")
+
+        svg
+            .append("text")
+            .text(function food2(d){
+                    if(index<10){
+                    d = producten[index]
+                    return d.eten2}
+                    })
+            .attr("font-size", "20")
+            .attr("x", "630")
+            .attr("y", "450")
+
 
         svg
             .style("background", "lightgrey")
@@ -110,9 +128,30 @@ function drawscale(){
             .append("image")
             .attr("xlink:href", function picture(d){
                                     if(index<10){
-                                    d = producten[index]
-                                    return d.foto1}
+                                        d = producten[index]
+                                        return d.foto1}
+                                    else {
+                                        einde()
+                                    }
 
+            })
+            .on("click", function display(d){
+                if(index<10){
+                    d = producten[index]
+                    if(d.keuze1 == "goedrechts"){
+                        return goedrechts()
+                    }
+                    else if(d.keuze1 == "foutrechts"){
+                        return foutrechts()
+                    }
+                    else if(d.keuze1 == "foutlinks"){
+                        return foutlinks()
+                    }
+                    else {
+                        return goedlinks()
+                    }
+                }
+                
             })
             .attr("width", "150")
             .attr("height", "150")
@@ -133,57 +172,15 @@ function drawscale(){
             .append("image")
             .attr("xlink:href", function picture(d){
                                     if(index<10){
-                                    d = producten[index]
-                                    return d.foto2}
+                                        d = producten[index]
+                                        return d.foto2}
+                                    else {
+                                        einde()
+                                    }
 
-            })
-            .attr("width", "150")
-            .attr("height", "150")
-            .attr("x","610")
-            .attr("y","255")
-
-        svg
-            .append("polygon")
-            .attr("points", "684,182 679,187 732,387 737,382")
-            .style("fill", "black")
-
-        let button1 = body.append("button")
-            .text(function name(d) {
-                console.log(index)
-                if(index<10){
-                    d = producten[index]
-                    return d.eten1}
-                else {
-                    einde()
-                }
             })
             .on("click", function display(d){
-                d = producten[index]
-                if(d.keuze1 == "goedrechts"){
-                    return goedrechts()
-                }
-                else if(d.keuze1 == "foutrechts"){
-                    return foutrechts()
-                }
-                else if(d.keuze1 == "foutlinks"){
-                    return foutlinks()
-                }
-                else {
-                    return goedlinks()
-                }
-            })
-
-
-        let button2 = body.append("button")
-            .text(function name(d) {
-                if(index<10){
-                    d = producten[index]
-                    return d.eten2}
-                else {
-                    einde()
-                }
-            })
-            .on("click", function display(d){
+                if (index<10){
                     d = producten[index]
                     if(d.keuze2 == "goedrechts"){
                         return goedrechts()
@@ -197,7 +194,70 @@ function drawscale(){
                     else {
                         return goedlinks()
                     }
-            })
+                }
+                
+        })
+            .attr("width", "150")
+            .attr("height", "150")
+            .attr("x","610")
+            .attr("y","255")
+
+        svg
+            .append("polygon")
+            .attr("points", "684,182 679,187 732,387 737,382")
+            .style("fill", "black")
+
+        // let button1 = body.append("button")
+        //     .text(function name(d) {
+        //         console.log(index)
+        //         if(index<10){
+        //             d = producten[index]
+        //             return d.eten1}
+        //         else {
+        //             einde()
+        //         }
+        //     })
+        //     .on("click", function display(d){
+        //         d = producten[index]
+        //         if(d.keuze1 == "goedrechts"){
+        //             return goedrechts()
+        //         }
+        //         else if(d.keuze1 == "foutrechts"){
+        //             return foutrechts()
+        //         }
+        //         else if(d.keuze1 == "foutlinks"){
+        //             return foutlinks()
+        //         }
+        //         else {
+        //             return goedlinks()
+        //         }
+        //     })
+
+
+        // let button2 = body.append("button")
+        //     .text(function name(d) {
+        //         if(index<10){
+        //             d = producten[index]
+        //             return d.eten2}
+        //         else {
+        //             einde()
+        //         }
+        //     })
+        //     .on("click", function display(d){
+        //             d = producten[index]
+        //             if(d.keuze2 == "goedrechts"){
+        //                 return goedrechts()
+        //             }
+        //             else if(d.keuze2 == "foutrechts"){
+        //                 return foutrechts()
+        //             }
+        //             else if(d.keuze2 == "foutlinks"){
+        //                 return foutlinks()
+        //             }
+        //             else {
+        //                 return goedlinks()
+        //             }
+        //     })
 
 }
 
