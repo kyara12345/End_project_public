@@ -13,30 +13,41 @@ function begin(){
 
         svg
             .append("text")
-            .text("Bij de productie/cosumptie van eten komen veel gassen vrij. Het is belangrijk om hier bewust van te zijn!")
-            .attr("x", "50")
-            .attr("y", "200")
+            .text("Vanaf de productie tot aan het cosumeren van eten komen veel gassen vrij. Het is belangrijk om hier bewust van te zijn!")
+            .attr("font-size", "20")
+            .attr("x", "25")
+            .attr("y", "250")
+
+        svg
+            .append("text")
+            .text("Door bewust na te denken bij keuzes van etenswaren kan de CO2 uitstoot hierbij al met de helft verminderen!")
+            .attr("font-size", "20")
+            .attr("x", "25")
+            .attr("y", "270")
 
         svg
             .append("text")
             .text("U krijgt 10 keer 2 etenswaren te zien, klik vervolgens onderaan op de button,")
-            .attr("x", "50")
-            .attr("y", "230")
+            .attr("font-size", "20")
+            .attr("x", "25")
+            .attr("y", "310")
 
         svg
             .append("text")
             .text("met het product dat volgens u de meeste CO2 uitstoot!")
-            .attr("x", "50")
-            .attr("y", "260")
+            .attr("font-size", "20")
+            .attr("x", "25")
+            .attr("y", "330")
 
         svg
             .append("text")
             .text("Klik op 'start' om te beginnen!")
-            .attr("x", "50")
-            .attr("y", "300")
+            .attr("font-size", "20")
+            .attr("font-weight", "bold")
+            .attr("x", "25")
+            .attr("y", "370")
 
         let button = d3.select("body").append("button")
-            // .append("button")
             .text("Start")
             .on("click", drawscale)
 
@@ -53,8 +64,9 @@ function drawscale(){
 
         svg
             .append("text")
-            .text("Bij welk product onstaat de meeste CO2 uitstoot tijdens de productie/cosumptie?")
-            .attr("x", "150")
+            .text("Bij welk product onstaat de meeste CO2 uitstoot van productie tot cosumptie?")
+            .attr("font-size", "20")
+            .attr("x", "180")
             .attr("y", "90")
 
         svg
@@ -254,7 +266,8 @@ function goedlinks(){
             d = producten[index]
             return "De uitstoot van " + d.eten1 + " is " + d.uitstoot1 + "."
         })
-        .attr("x", "190")
+        .attr("font-size", "18")
+        .attr("x", "150")
         .attr("y", "500")
 
     svg
@@ -286,6 +299,7 @@ function goedlinks(){
             d = producten[index]
             return "De uitstoot van " + d.eten2 + " is " + d.uitstoot2 + "."
         })
+        .attr("font-size", "18")
         .attr("x", "600")
         .attr("y", "500")
 
@@ -294,18 +308,20 @@ function goedlinks(){
         .text(function uitstoot (d){
             d = producten[index]
             if (d.uitstoot1>d.uitstoot2){
-                return "De CO2 uitstoot bij de productie/cosumptie van " + d.eten1 + " is dus het grootst."
+                return "De CO2 uitstoot van de productie tot de cosumptie van " + d.eten1 + " is dus het grootst."
             }
             else {
-                return "De CO2 uitstoot bij de productie/cosumptie van " + d.eten2 + " is dus het grootst."
+                return "De CO2 uitstoot van de productie tot de cosumptie van " + d.eten2 + " is dus het grootst."
             }
         })
-        .attr("x", "250")
+        .attr("font-size", "18")
+        .attr("x", "220")
         .attr("y", "620")   	
 
     svg
         .append("text")
         .text("Goede antwoorden: " + score.length)
+        .attr("font-size", "18")
         .attr("x", "10")
         .attr("y", "570")
 
@@ -382,7 +398,8 @@ function foutlinks(){
             d = producten[index]
             return "De uitstoot van " + d.eten1 + " is " + d.uitstoot1 + "."
         })
-        .attr("x", "190")
+        .attr("font-size", "18")
+        .attr("x", "150")
         .attr("y", "500")
 
     svg
@@ -414,6 +431,7 @@ function foutlinks(){
             d = producten[index]
             return "De uitstoot van " + d.eten2 + " is " + d.uitstoot2 + "."
         })
+        .attr("font-size", "18")
         .attr("x", "600")
         .attr("y", "500")
 
@@ -422,18 +440,20 @@ function foutlinks(){
         .text(function uitstoot (d){
             d = producten[index]
             if (d.uitstoot1>d.uitstoot2){
-                return "De CO2 uitstoot bij de productie/cosumptie van " + d.eten1 + " is dus het grootst."
+                return "De CO2 uitstoot van de productie tot de cosumptie van " + d.eten1 + " is dus het grootst."
             }
             else {
-                return "De CO2 uitstoot bij de productie/cosumptie van " + d.eten2 + " is dus het grootst."
+                return "De CO2 uitstoot van de productie tot de cosumptie van " + d.eten2 + " is dus het grootst."
             }
         })
-        .attr("x", "250")
+        .attr("font-size", "18")
+        .attr("x", "220")
         .attr("y", "620")
 
     svg
         .append("text")
         .text("Goede antwoorden: " + score.length)
+        .attr("font-size", "18")
         .attr("x", "10")
         .attr("y", "570")
 
@@ -447,8 +467,6 @@ function foutlinks(){
 
     index = index + 1
     }
-
-    
 
 function goedrechts(){
         body.selectAll("*").remove()
@@ -515,7 +533,8 @@ function goedrechts(){
                 d = producten[index]
                 return "De uitstoot van " + d.eten1 + " is " + d.uitstoot1 + "."
             })
-            .attr("x", "190")
+            .attr("font-size", "18")
+            .attr("x", "150")
             .attr("y", "500")
     
         svg
@@ -547,6 +566,7 @@ function goedrechts(){
                 d = producten[index]
                 return "De uitstoot van " + d.eten2 + " is " + d.uitstoot2 + "."
             })
+            .attr("font-size", "18")
             .attr("x", "600")
             .attr("y", "500")
     
@@ -555,18 +575,20 @@ function goedrechts(){
             .text(function uitstoot (d){
                 d = producten[index]
                 if (d.uitstoot1>d.uitstoot2){
-                    return "De CO2 uitstoot bij de productie/cosumptie van " + d.eten1 + " is dus het grootst."
+                    return "De CO2 uitstoot van de productie tot de cosumptie van " + d.eten1 + " is dus het grootst."
                 }
                 else {
-                    return "De CO2 uitstoot bij de productie/cosumptie van " + d.eten2 + " is dus het grootst."
+                    return "De CO2 uitstoot van de productie tot de cosumptie van " + d.eten2 + " is dus het grootst."
                 }
             })
-            .attr("x", "250")
+            .attr("font-size", "18")
+            .attr("x", "220")
             .attr("y", "620")
 
         svg
             .append("text")
             .text("Goede antwoorden: " + score.length)
+            .attr("font-size", "18")
             .attr("x", "10")
             .attr("y", "570")
 
@@ -645,7 +667,8 @@ function foutrechts(){
                     d = producten[index]
                     return "De uitstoot van " + d.eten1 + " is " + d.uitstoot1 + "."
                 })
-                .attr("x", "190")
+                .attr("font-size", "18")
+                .attr("x", "150")
                 .attr("y", "500")
 
             svg
@@ -677,6 +700,7 @@ function foutrechts(){
                     d = producten[index]
                     return "De uitstoot van " + d.eten2 + " is " + d.uitstoot2 + "."
                 })
+                .attr("font-size", "18")
                 .attr("x", "600")
                 .attr("y", "500")
         
@@ -685,18 +709,20 @@ function foutrechts(){
                 .text(function uitstoot (d){
                     d = producten[index]
                     if (d.uitstoot1>d.uitstoot2){
-                        return "De CO2 uitstoot bij de productie/cosumptie van " + d.eten1 + " is dus het grootst."
+                        return "De CO2 uitstoot van de productie tot de cosumptie van " + d.eten1 + " is dus het grootst."
                     }
                     else {
-                        return "De CO2 uitstoot bij de productie/cosumptie van " + d.eten2 + " is dus het grootst."
+                        return "De CO2 uitstoot van de productie tot de cosumptie van " + d.eten2 + " is dus het grootst."
                     }
                 })
-                .attr("x", "250")
+                .attr("font-size", "18")
+                .attr("x", "220")
                 .attr("y", "620")
 
             svg
                 .append("text")
                 .text("Goede antwoorden: " + score.length)
+                .attr("font-size", "18")
                 .attr("x", "10")
                 .attr("y", "570")
             
@@ -718,10 +744,13 @@ function foutrechts(){
                 .attr("height", 650)
                 .attr("width", 1000)
                 .style("background", "lightgrey")
+                .attr("xmlns:xlink", "http://www.w3.org/1999/xlink")
 
         svg
             .append("text")
             .text("Uw score: " + score.length + " goed beantwoord van de 10.")
+            .attr("font-size", "20")
+            .attr("font-weight","bold")
             .attr("x", "50")
             .attr("y", "200")
 
@@ -738,56 +767,75 @@ function foutrechts(){
                     return "Oei.. Om beter/bewuster keuzes te maken, zijn de volgende stappen opgesteld!:"
                 }
             })
+            .attr("font-size", "20")
             .attr("x", "50")
-            .attr("y", "235")
+            .attr("y", "245")
 
             
         svg
             .append("text")
             .text("1. Eet minder vlees: kies vaker peulvruchten en noten")
+            .attr("font-size", "20")
             .attr("x", "50")
             .attr("y", "270")
 
         svg
             .append("text")
             .text("2. Verspil zo min mogelijk voedsel: koop en kook op maat")
+            .attr("font-size", "20")
             .attr("x", "50")
             .attr("y", "290")
 
         svg
             .append("text")
             .text("3. Eet op maat, en niet te veel snacks en snoep")
+            .attr("font-size", "20")
             .attr("x", "50")
             .attr("y", "310")
 
         svg
             .append("text")
             .text("4. Drink vooral kraanwater, thee en koffie")
+            .attr("font-size", "20")
             .attr("x", "50")
             .attr("y", "330")
 
         svg
             .append("text")
             .text("5. Eet voldoende zuivel en kaas, maar niet meer dan nodig")
+            .attr("font-size", "20")
             .attr("x", "50")
             .attr("y", "350")
 
         svg
             .append("text")
             .text("6. Kies seizoensproducten en kijk naar herkomst")
+            .attr("font-size", "20")
             .attr("x", "50")
             .attr("y", "370")
             
         svg
             .append("text")
             .text("7. Kies voor topkeurmerken")
+            .attr("font-size", "20")
             .attr("x", "50")
             .attr("y", "390")
 
         svg
             .append("text")
-            .text("Voor meer informatie, kijk naar: https://www.voedingscentrum.nl/nl/duurzaam-eten/duurzaam-eten-in-7-stappen.aspx")
+            .text("Voor meer informatie, kijk naar: ")
+            .attr("font-size", "20")
+            .attr("font-weight", "bold")
             .attr("x", "50")
-            .attr("y", "440")
+            .attr("y", "450")
 
+        svg
+            .append("text")
+            .attr("font-size", "20")
+            .attr("x", "50")
+            .attr("y", "470")
+            .text("Complete uitleg voeding tips")
+            .on("click", function() {window.open("https://www.voedingscentrum.nl/nl/duurzaam-eten/duurzaam-eten-in-7-stappen.aspx")})
+            .style("fill", "blue")
+            .style("text-decoration","underline")
     }
