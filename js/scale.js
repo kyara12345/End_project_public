@@ -5,7 +5,7 @@ let index = 0
 
 let score = []
 
-// let tekstdeel1 = "De CO2 uitstoot van de productie tot de cosumptie van <b>"
+
 
 function begin(){
         let svg = d3.select("body").append("svg")
@@ -15,7 +15,7 @@ function begin(){
 
         svg
             .append("text")
-            .text("Vanaf de productie tot aan het cosumeren van eten komen veel gassen vrij. Het is belangrijk om hier bewust van te zijn!")
+            .text("Vanaf de productie tot aan het consumeren van eten komen veel gassen vrij. Het is belangrijk om hier bewust van te zijn!")
             .attr("font-size", "20")
             .attr("x", "25")
             .attr("y", "250")
@@ -59,7 +59,7 @@ function drawscale(){
 
         svg
             .append("text")
-            .text("Bij welk product onstaat de meeste CO2 uitstoot van productie tot cosumptie?")
+            .text("Bij welk product onstaat de meeste CO2 uitstoot van productie tot consumptie?")
             .attr("font-size", "20")
             .attr("x", "180")
             .attr("y", "90")
@@ -368,10 +368,10 @@ function goedlinks(){
         .text(function uitstoot (d){
             d = producten[index]
             if (d.uitstoot1>d.uitstoot2){
-                return "De CO2 uitstoot van de productie tot de cosumptie van " + d.eten1 + " is dus het grootst."
+                return "De CO2 uitstoot van de productie tot de consumptie van " + d.eten1 + " is dus het grootst."
             }
             else {
-                return "De CO2 uitstoot van de productie tot de cosumptie van " + d.eten2 + " is dus het grootst."
+                return "De CO2 uitstoot van de productie tot de consumptie van " + d.eten2 + " is dus het grootst."
             }
         })
         .attr("font-size", "18")
@@ -500,10 +500,10 @@ function foutlinks(){
         .text(function uitstoot (d){
             d = producten[index]
             if (d.uitstoot1>d.uitstoot2){
-                return "De CO2 uitstoot van de productie tot de cosumptie van " + d.eten1 + " is dus het grootst."
+                return "De CO2 uitstoot van de productie tot de consumptie van " + d.eten1 + " is dus het grootst."
             }
             else {
-                return "De CO2 uitstoot van de productie tot de cosumptie van " + d.eten2 + " is dus het grootst."
+                return "De CO2 uitstoot van de productie tot de consumptie van " + d.eten2 + " is dus het grootst."
             }
         })
         .attr("font-size", "18")
@@ -635,10 +635,10 @@ function goedrechts(){
             .text(function uitstoot (d){
                 d = producten[index]
                 if (d.uitstoot1>d.uitstoot2){
-                    return "De CO2 uitstoot van de productie tot de cosumptie van " + d.eten1 + " is dus het grootst."
+                    return "De CO2 uitstoot van de productie tot de consumptie van " + d.eten1 + " is dus het grootst."
                 }
                 else {
-                    return "De CO2 uitstoot van de productie tot de cosumptie van " + d.eten2 + " is dus het grootst."
+                    return "De CO2 uitstoot van de productie tot de consumptie van " + d.eten2 + " is dus het grootst."
                 }
             })
             .attr("font-size", "18")
@@ -769,10 +769,10 @@ function foutrechts(){
                 .text(function uitstoot (d){
                     d = producten[index]
                     if (d.uitstoot1>d.uitstoot2){
-                        return "De CO2 uitstoot van de productie tot de cosumptie van " + d.eten1 + " is dus het grootst."
+                        return "De CO2 uitstoot van de productie tot de consumptie van " + d.eten1 + " is dus het grootst."
                     }
                     else {
-                        return "De CO2 uitstoot van de productie tot de cosumptie van " + d.eten2 + " is dus het grootst."
+                        return "De CO2 uitstoot van de productie tot de consumptie van " + d.eten2 + " is dus het grootst."
                     }
                 })
                 .attr("font-size", "18")
