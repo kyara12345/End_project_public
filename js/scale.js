@@ -5,8 +5,6 @@ let index = 0
 
 let score = []
 
-
-
 function begin(){
         let svg = d3.select("body").append("svg")
                 .attr("height", 650)
@@ -45,7 +43,6 @@ function begin(){
         let button = d3.select("body").append("button")
             .text("Start")
             .on("click", drawscale)
-
 }
 begin()
 
@@ -85,7 +82,6 @@ function drawscale(){
             .attr("font-size", "20")
             .attr("x", "630")
             .attr("y", "450")
-
 
         svg
             .style("background", "lightgrey")
@@ -133,7 +129,6 @@ function drawscale(){
                                     else {
                                         einde()
                                     }
-
             })
             .on("click", function display(d){
                 if(index<10){
@@ -150,8 +145,7 @@ function drawscale(){
                     else {
                         return goedlinks()
                     }
-                }
-                
+                }                
             })
             .attr("width", "150")
             .attr("height", "150")
@@ -177,7 +171,6 @@ function drawscale(){
                                     else {
                                         einde()
                                     }
-
             })
             .on("click", function display(d){
                 if (index<10){
@@ -195,7 +188,6 @@ function drawscale(){
                         return goedlinks()
                     }
                 }
-                
         })
             .attr("width", "150")
             .attr("height", "150")
@@ -206,59 +198,6 @@ function drawscale(){
             .append("polygon")
             .attr("points", "684,182 679,187 732,387 737,382")
             .style("fill", "black")
-
-        // let button1 = body.append("button")
-        //     .text(function name(d) {
-        //         console.log(index)
-        //         if(index<10){
-        //             d = producten[index]
-        //             return d.eten1}
-        //         else {
-        //             einde()
-        //         }
-        //     })
-        //     .on("click", function display(d){
-        //         d = producten[index]
-        //         if(d.keuze1 == "goedrechts"){
-        //             return goedrechts()
-        //         }
-        //         else if(d.keuze1 == "foutrechts"){
-        //             return foutrechts()
-        //         }
-        //         else if(d.keuze1 == "foutlinks"){
-        //             return foutlinks()
-        //         }
-        //         else {
-        //             return goedlinks()
-        //         }
-        //     })
-
-
-        // let button2 = body.append("button")
-        //     .text(function name(d) {
-        //         if(index<10){
-        //             d = producten[index]
-        //             return d.eten2}
-        //         else {
-        //             einde()
-        //         }
-        //     })
-        //     .on("click", function display(d){
-        //             d = producten[index]
-        //             if(d.keuze2 == "goedrechts"){
-        //                 return goedrechts()
-        //             }
-        //             else if(d.keuze2 == "foutrechts"){
-        //                 return foutrechts()
-        //             }
-        //             else if(d.keuze2 == "foutlinks"){
-        //                 return foutlinks()
-        //             }
-        //             else {
-        //                 return goedlinks()
-        //             }
-        //     })
-
 }
 
 function goedlinks(){
@@ -671,7 +610,6 @@ function foutrechts(){
                 .attr("width", 1000)
                 .style("background", "lightgrey")
 
-
             svg
                 .append("polygon")
                 .attr("points", "495,150 505,150 508,550 530,550 530,570 553,570 553,590 448,590 448,570 470,570 470,550 493,550")
@@ -709,7 +647,6 @@ function foutrechts(){
                                         if(index<22){
                                         d = producten[index]
                                         return d.foto1}
-
                             })
                 .attr("width", "150")
                 .attr("height", "150")
@@ -742,7 +679,6 @@ function foutrechts(){
                                         if(index<22){
                                         d = producten[index]
                                         return d.foto2}
-
                             })
                 .attr("width", "150")
                 .attr("height", "150")
@@ -898,4 +834,125 @@ function foutrechts(){
             .on("click", function() {window.open("https://www.voedingscentrum.nl/nl/duurzaam-eten/duurzaam-eten-in-7-stappen.aspx")})
             .style("fill", "blue")
             .style("text-decoration","underline")
+
+
+        svg
+            .append("image")
+            .attr("xlink:href", function picture(d){
+                                    d = producten[0]
+                                    return d.foto1}
+                        )
+            .attr("width", "150")
+            .attr("height", "150")
+            .attr("x","700")
+            .attr("y","20")
+
+        svg
+            .append("text")
+            .text(function uitstoot(d){
+                    d = producten[0]
+                    return d.uitstoot1 + "p/kg"
+            })
+            .attr("x", "700")
+            .attr("y", "175")
+
+        svg
+            .append("image")
+            .attr("xlink:href", function picture(d){
+                                    d = producten[1]
+                                    return d.foto2}
+                        )
+            .attr("width", "150")
+            .attr("height", "150")
+            .attr("x","830")
+            .attr("y","110")
+
+        svg
+            .append("text")
+            .text(function uitstoot(d){
+                    d = producten[1]
+                    return d.uitstoot2 + "p/kg"
+            })
+            .attr("x", "850")
+            .attr("y", "265")
+
+        svg
+            .append("image")
+            .attr("xlink:href", function picture(d){
+                                    d = producten[2]
+                                    return d.foto1}
+                        )
+            .attr("width", "150")
+            .attr("height", "150")
+            .attr("x","700")
+            .attr("y","200")
+
+        svg
+            .append("text")
+            .text(function uitstoot(d){
+                    d = producten[2]
+                    return d.uitstoot1 + "p/kg"
+            })
+            .attr("x", "700")
+            .attr("y", "355")
+
+        svg
+            .append("image")
+            .attr("xlink:href", function picture(d){
+                                    d = producten[5]
+                                    return d.foto1}
+                        )
+            .attr("width", "150")
+            .attr("height", "150")
+            .attr("x","830")
+            .attr("y","290")
+
+        svg
+            .append("text")
+            .text(function uitstoot(d){
+                    d = producten[5]
+                    return d.uitstoot1 + "p/kg"
+            })
+            .attr("x", "850")
+            .attr("y", "445")
+
+        svg
+            .append("image")
+            .attr("xlink:href", function picture(d){
+                                    d = producten[6]
+                                    return d.foto2}
+                        )
+            .attr("width", "150")
+            .attr("height", "150")
+            .attr("x","700")
+            .attr("y","380")
+
+        svg
+            .append("text")
+            .text(function uitstoot(d){
+                    d = producten[6]
+                    return d.uitstoot2 + "p/kg"
+            })
+            .attr("x", "700")
+            .attr("y", "535")
+
+        svg
+            .append("image")
+            .attr("xlink:href", function picture(d){
+                                    d = producten[7]
+                                    return d.foto2}
+                        )
+            .attr("width", "150")
+            .attr("height", "150")
+            .attr("x","830")
+            .attr("y","470")
+
+        svg
+            .append("text")
+            .text(function uitstoot(d){
+                    d = producten[7]
+                    return d.uitstoot2 + "p/kg"
+            })
+            .attr("x", "850")
+            .attr("y", "625")
     }

@@ -86,7 +86,7 @@ let producten = [
     "keuze1" : "goedrechts",
     "eten2" : "smeerleverworst",
     "foto2" : "img/smeerleverworst.png",
-    "uitstoot2" : "5,732",
+    "uitstoot2" : "05,732",
     "keuze2" : "foutrechts"
     }
 ];
